@@ -20,13 +20,5 @@ steps:
       dotnet test -c Release --no-build
     displayName: 'Restore, Build, Test casess and  Run Tests'
     
-  # 🚀 Deploy to Azure App Service (test prod slot)
-  - task: AzureWebApp@1
-    displayName: 'Deploy to Azure App Service (staging)'
-    inputs:
-      azureSubscription: 'github.com_arsallane1'
-      appName: 'ChihadeTravelAgency'
-      resourceGroupName: 'appgroup'
-      slotName: 'production'
-      package: '$(System.DefaultWorkingDirectory)/**/publish/*.zip'
+
 
