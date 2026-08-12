@@ -1,0 +1,21 @@
+[Azure CLI Cmds ]
+
+az login
+az group create  --name appgroup --location francecentral
+az appservice plan create  --name appplan  --resource-group appgroup   --sku F1   --is-linux  
+az webapp create   --name ChihadeTravelAgency  --resource-group appgroup   --plan appplan   --runtime "DOTNETCORE:10.0"
+
+az webapp config set --resource-group appgroup --name ChihadeTravelAgency    --generic-configurations "@.\params.json"  [ "linuxFxVersion": "","setting SCM_DO_BUILD_DURING_DEPLOYMENT": true]
+
+dotnet publish -c Release -o publish
+Compress-Archive -Path * -DestinationPath ..\site.zip -Force  [zip contenu de wwwroot+publish en une seule racine]
+
+az webapp deploy --resource-group appgroup --name ChihadeTravelAgency   --src-path .\publish.zip --type zip
+
+
+
+[Show infos]
+
+az account show  
+ az plan list
+az appservice  Plan list

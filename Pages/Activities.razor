@@ -1,0 +1,78 @@
+﻿@page "/Activities"
+@inject HttpClient Http
+
+<PageTitle>Chihade Agency </PageTitle>
+
+<h2 >Outdoor Adventures</h2>  <br /><br />
+
+<p>🌄 Hiking — trails, viewpoints, nature escapes</p>
+<img src="https://ts2.mm.bing.net/th?id=OIP.X8vN6o52eTDWoa5LsF6-PgHaE8&pid=15.1&o=7&rm=3s"/>
+
+<p>🚣 Kayaking — calm lakes or wild rivers</p>
+<img src="https://ts3.mm.bing.net/th?id=OIP.RfKGweciwArlJ12O-bTITAHaD_&pid=15.1&o=7&rm=3" />
+
+<p>🐠 Diving — underwater worlds and shipwrecks</p>
+<img src="https://ts2.mm.bing.net/th?id=OIP.cdRNDHPu-Vuu24dGPNE9FgHaDr&pid=15.1&o=7&rm=3" />
+
+<p>⛵ Sailing lessons — wind, waves, and freedom</p>
+<img src="https://ts3.mm.bing.net/th?id=OIP.ul9h8jMKxTz5N5ZQlkmyZQHaEK&pid=15.1&o=7&rm=3" />
+
+<p>🧘‍♂️ Yoga retreats — balance, breathing, serenity</p> 
+
+<img src="https://ts2.mm.bing.net/th?id=OIP._ICFGGg9ncmgNvuyNrIG_wHaE8&pid=15.1&o=7&rm=3" />
+
+ 
+
+@if (activities == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Date</th>
+                <th>timeSlot</th>
+                <th>Activity</th>
+                <th>Seats</th>
+                <th>Price (€)</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var activity in activities)
+            {
+                <tr>
+                    <td>@activity.Date.ToShortDateString()</td>
+                    <td>@activity.timeSlot</td>
+                    <td>@activity.activity</td>
+                    <td>@activity.seats</td>
+                    <td>@activity.priceEUR </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Activity[]? activities;
+
+    protected override async Task OnInitializedAsync()
+    {
+        activities = await Http.GetFromJsonAsync<Activity[]>("sample-data/activity.json");
+    }
+
+    public class Activity
+    {
+        public DateOnly Date { get; set; }
+        public int priceEUR { get; set; }
+        public int seats { get; set; }
+        public string timeSlot { get; set; }
+        public string activity { get; set; }
+
+ 
+    }
+}

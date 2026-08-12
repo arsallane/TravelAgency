@@ -1,0 +1,43 @@
+﻿@page "/Contact"
+
+<PageTitle>Chihade Agency</PageTitle>
+
+<h1>Contact Us </h1>
+<br /><br />
+
+<p>Email : chihadben@gmail.com</p>
+<p>Téléphone : +33 1 23 45 67 89</p>
+
+<div class="mb-3">
+    <label>Email :</label><br />
+    <input type="email" class="form-control" @bind="email" />
+</div>
+
+<div class="mb-3">
+    <label>Subject :</label><br />
+    <input class="form-control" @bind="subject" />
+</div>
+
+<div class="mb-3">
+    <label>Message :</label><br />
+    <textarea class="form-control" @bind="message"></textarea>
+</div>
+
+<button class="btn btn-primary" @onclick="Send">Send</button>
+
+@code {
+    string recipient = "chihadben@gmail.com";
+    string email = "";
+    string subject = "";
+    string message = "";
+
+    void Send()
+    {
+        var url =
+            $"mailto:{recipient}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(message)}&cc={email}";
+
+        Navigation.NavigateTo(url, true);
+    }
+
+    [Inject] NavigationManager Navigation { get; set; }
+}

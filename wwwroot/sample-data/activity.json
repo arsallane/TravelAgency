@@ -1,0 +1,45 @@
+[
+
+  
+
+
+  {
+    "date": "2026-08-15",
+    "timeSlot": "Evening",
+    "activity": "Kayaking",
+    "seats": 8,
+    "priceEUR": 20
+  },
+  {
+    "date": "2026-08-16",
+    "timeSlot": "Morning",
+    "activity": "Sailing lessons",
+    "seats": 5,
+    "priceEUR": 85
+  },
+
+   {
+    "date": "2026-08-17",
+    "timeSlot": "Morning",
+    "activity": "Hiking",
+    "seats": 20,
+    "priceEUR": 12
+  },
+    {
+    "date": "2026-08-20",
+    "timeSlot": "Morning",
+    "activity": "Yoga",
+    "seats": 8,
+    "priceEUR": 22
+  },
+   {
+    "date": "2026-08-26",
+    "timeSlot": "Morning",
+    "activity": "Diving",
+    "seats": 5,
+    "priceEUR": 45
+  }
+]
+ 
+ 
+ 

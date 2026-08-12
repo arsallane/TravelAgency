@@ -1,0 +1,5 @@
+C:\Users\33671\ZeusTheCat_AzureSite\publish\wwwroot\index.html
+C:\Users\33671\ZeusTheCat_AzureSite\publish\params.json
+C:\Users\33671\ZeusTheCat_AzureSite\publish\app.runtimeconfig.json
+C:\Users\33671\ZeusTheCat_AzureSite\publish\dotnet.js
+C:\Users\33671\ZeusTheCat_AzureSite\publish\web.config
