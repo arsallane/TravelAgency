@@ -20,4 +20,7 @@ git pull origin main --rebase
 git push -u origin main
 
 
+git rm -f .github/workflows
+
+
 "test"

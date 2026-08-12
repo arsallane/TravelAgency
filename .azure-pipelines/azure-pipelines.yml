@@ -1,0 +1,21 @@
+trigger:
+  branches:
+    include:
+      - Main
+          
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '10.0.x'
+    displayName: 'Install .NET 10 SDK'
+
+  - script: |
+      dotnet restore
+      dotnet build -c Release
+      dotnet test -c Release --no-build
+    displayName: 'Restore, Build, Test casess and  Run Te  sts'
