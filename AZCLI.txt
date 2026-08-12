@@ -1,6 +1,7 @@
 [Azure CLI Cmds ]
 
 az login
+
 az group create  --name appgroup --location francecentral
 az appservice plan create  --name appplan  --resource-group appgroup   --sku F1   --is-linux  
 az webapp create   --name ChihadeTravelAgency  --resource-group appgroup   --plan appplan   --runtime "DOTNETCORE:10.0"
