@@ -24,7 +24,7 @@ steps:
   - task: AzureWebApp@1
     displayName: 'Deploy to Azure App Service (staging)'
     inputs:
-      azureSubscription: 'AzureConnection'
+      azureSubscription: 'github.com_arsallane1'
       appName: 'ChihadeTravelAgency'
       resourceGroupName: 'appgroup'
       slotName: 'production'
