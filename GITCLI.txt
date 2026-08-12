@@ -1,3 +1,6 @@
+Run git config --global init.defaultBranch main to make main the default branch for all new repositories
+dotnet new gitignore
+
 -- new folder .github/workflow/file.yml 
 
 git.init 
@@ -11,8 +14,10 @@ git push -u origin main
  gh auth login 
    
  
+git add . 
+git commit -m "commit 6"
 git pull origin main --rebase
 git push -u origin main
 
 
-git commit -m "first commit"
+"test"
