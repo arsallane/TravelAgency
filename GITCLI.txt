@@ -20,6 +20,7 @@ git pull origin main --rebase
 git push -u origin main
 
 
+//supprimer le faux submodule + git add. et commit la suppression !
 git rm -f .github/workflows
 
 

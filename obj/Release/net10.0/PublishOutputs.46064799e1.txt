@@ -1,5 +1,0 @@
-C:\Users\33671\app\publish\wwwroot\index.html
-C:\Users\33671\app\publish\params.json
-C:\Users\33671\app\publish\app.runtimeconfig.json
-C:\Users\33671\app\publish\dotnet.js
-C:\Users\33671\app\publish\web.config
